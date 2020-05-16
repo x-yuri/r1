@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: url(/img/bg.webp?v=9);
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+header .icons {
+    list-style-type: none;
+    float: right;
+    padding: 0;
+    margin-right: 15px;
+}
+header .icons li {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 10px;
+}
+header li.mail .text {
+    text-transform: uppercase;
+}
+header li.mail a:hover .text {
+	text-decoration: underline;
+}
+header .icons img {
+	display: block;
+    height: 100%;
+}
+
+header .image {
+    margin-top: 30px;
+    height: 386px;
+    background: url(/img/header-image.png?v=2) center / contain no-repeat;
+}
+
+iframe.youtube {
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+}
+
+iframe.soundcloud {
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.b-list {
+	width: 520px;
+	margin: auto;
+	overflow: hidden;
+}
+.b-list-ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-left: -20px;
+}
+.b-list-li {
+	float: left;
+	width: 250px;
+	margin-top: 20px;
+	margin-left: 20px;
+}
+.b-list-a {
+	display: block;
+	width: 100%;
+}
+
+.shops {
+	width: 520px;
+	margin-top: 30px;
+}
+.shops li {
+	width: 250px;
+}
+.shops a {
+	height: 100px;
+}
+.shops img {
+	display: block;
+	max-width: 250px;
+	max-height: 100px;
+	margin: auto;
+}
+
+.fb-page {
+	display: block !important;
+	width: 340px;
+	margin: auto;
+	margin-top: 50px;
+}
+
+h2 {
+	margin-top: 50px;
+	margin-bottom: 0;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+h2 a {
+	color: white;
+	text-decoration: none;
+}
+h2 a:hover {
+	text-decoration: underline;
+}
+
+h2.instagram {
+	font-size: 20px;
+}
+
+.instagram-feed {
+	width: 490px;
+}
+.instagram-feed li {
+	width: 150px;
+}
+
+h2.albums {
+	font-size: 40px;
+}
+
+div.albums {
+	width: 520px;
+}
+div.albums img {
+	height: 250px;
+}
+div.albums li {
+	width: 250px;
+	color: white;
+	text-align: center;
+}
+div.albums a {
+	margin-top: 16px;
+}
+
+p.hashtag,
+p.copyright {
+	color: white;
+	text-align: center;
+}

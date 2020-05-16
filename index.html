@@ -1,6 +1,120 @@
 <!doctype html>
 <html>
+<head>
+	<title>N O W A V E | Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/fontello/css/icons.css?v=2">
+    <link rel="stylesheet" href="/style.css?v=9">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
 <body>
-test 3
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v7.0"></script>
+
+    <header>
+        <ul class="icons">
+            <li class="mail">
+                <a href="mailto:contact@nowave.com.ua">
+                    <i class="icon-mail-alt"></i> <span class="text">mailing list</span></a>
+            <li><a href="https://www.instagram.com/nowave.music/">
+                    <img src="/img/icon-instagram.png?v=2" alt="instagram"></a>
+            <li><a href="https://www.youtube.com/channel/UCpn77TopaKOWhlkfWv6hFNg">
+                    <img src="/img/icon-youtube.png?v=2" alt="youtube"></a>
+            <li><a href="https://www.facebook.com/nowavesurfers/">
+                    <img src="/img/icon-fb.png?v=2" alt="facebook"></a>
+            <li><a href="https://t.me/nowavemusic">
+                    <img src="/img/icon-telegram.png?v=2" alt="telegram"></a>
+            <li><a href="https://soundcloud.com/nowavemusic">
+                    <img src="/img/icon-soundcloud.png?v=2" alt="soundcloud"></a>
+        </ul>
+        <br style="clear: right">
+        <div class="image"></div>
+    </header>
+
+    <iframe class="youtube" title="N O W A V E - DESTRUCTION MAN" width="560" height="315" src="https://www.youtube.com/embed/abFEpV4QSnY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+	<iframe class="soundcloud" title="XXXX CYBERPUNK MIX · NOWAVE" width="560" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1048593355&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+    <div class="b-list shops">
+    <ul class="b-list-ul">
+        <li class="b-list-li">
+            <a class="b-list-a music"
+                href="https://music.apple.com/ru/artist/n-o-w-a-v-e/1476454913" target="_blank" rel="noreferrer noopener">
+                    <img src="/img/icon-music.png?v=2" alt="itunes"></a>
+        <li class="b-list-li">
+            <a class="b-list-a spotify"
+                href="https://open.spotify.com/artist/3wXJxYqErTFgKHkposKgNE" target="_blank" rel="noreferrer noopener">
+                    <img src="/img/icon-spotify.png?v=2" alt="spotify"></a>
+        <li class="b-list-li">
+            <a class="b-list-a beatport"
+                href="https://www.beatport.com/artist/n-o-w-a-v-e/799800" target="_blank" rel="noreferrer noopener">
+                    <img src="/img/icon-beatport.png?v=2" alt="beatport"></a>
+        <li class="b-list-li">
+            <a class="b-list-a deezer"
+                href="https://www.deezer.com/en/artist/71703712" target="_blank" rel="noreferrer noopener">
+                    <img src="/img/icon-deezer.png?v=2" alt="deezer"></a>
+    </ul>
+    </div>
+
+    <div class="fb-page" data-href="https://www.facebook.com/nowavesurfers" data-tabs="timeline" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/nowavesurfers" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/nowavesurfers">N Ο W ∆ V Ξ</a></blockquote></div>
+
+    <h2 class="instagram"><a href="https://www.instagram.com/ravenowave/" target="_blank" rel="noreferrer noopener">@ravenowave</a></h2>
+
+    <div class="instagram-feed"></div>
+    <script type="text/x-tmpl" id="instagram-template">
+        <div class="b-list instagram-feed">
+        <ul class="b-list-ul">
+            {% for (var i = 0; i < o.length; i++) { %}
+                <li class="b-list-li">
+					<a href="{%= o[i].href %}" target="_blank" rel="noreferrer noopener">
+						<img src="{%= o[i].thumbnail %}" alt="{%= o[i].caption %}"></a>
+            {% } %}
+        </ul>
+        </div>
+    </script>
+    <script src="https://www.sowecms.com/demos/InstagramFeed/dist/InstagramFeed.min.js"></script>
+    <script src="https://unpkg.com/blueimp-tmpl@3.17.0/js/tmpl.js"></script>
+    <script>
+        (function(){
+            new InstagramFeed({
+                username: 'ravenowave',
+                get_data: true,
+                callback: function (data) {
+                    const instagramFeed = document.querySelector('.instagram-feed');
+                    data = data.edge_owner_to_timeline_media.edges.map(e =>
+						({thumbnail: e.node.thumbnail_resources
+                            .filter(th => th.config_width == 150)
+                            [0].src,
+						href: 'https://www.instagram.com/p/' + e.node.shortcode + '/',
+						caption: e.node.edge_media_to_caption.edges[0].node.text})
+                    ).slice(0, 6);
+					const div = document.createElement('div');
+                    div.innerHTML = tmpl('instagram-template', data);
+					instagramFeed.replaceWith(div.querySelector('.instagram-feed'));
+                },
+            });
+        })();
+    </script>
+
+    <h2 class="albums">Releases</h2>
+
+    <div class="b-list albums">
+    <ul class="b-list-ul">
+        <li class="b-list-li">
+            XXXX.Chapter 2: CYBERPUNK
+            <a class="b-list-a cyberpunk" href="https://backl.ink/142443959" target="_blank" rel="noreferrer noopener">
+                <img src="/img/album-cyberpunk.jpg?v=2" alt="album: cyberpunk"></a>
+        <li class="b-list-li">
+            XXXX.Chapter 1: MANGA
+            <a class="b-list-a manga" href="https://backl.ink/102674469" target="_blank" rel="noreferrer noopener">
+                <img src="/img/album-manga.jpg?v=2" alt="album: manga"></a>
+    </ul>
+    </div>
+
+    <p class="hashtag">#ravenowave
+    <p class="copyright">&copy; 2020 N O W A V E
 </body>
 </html>
